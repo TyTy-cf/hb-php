@@ -104,12 +104,25 @@ function displayHero($hero) {
     echo 'Dégâts : ' . $hero['damage'] . '<br>';
 }
 
-displayHero($warrior);
-displayHero($mage);
-
 echo '<br>';
 
 // 7.3.
 echo 'Exercice 7.3 : <br>';
 
+function dealDamages($heroAtk, &$heroDef) {
+    $heroDef['hp'] -= $heroAtk['damage'];
+    if ($heroDef['hp'] <= 0) {
+        echo $heroAtk['name'] . ' a gagné !';
+        return false;
+    }
+    displayHero($heroDef);
+    return true;
+}
 
+while ($warrior['hp'] > 0 && $mage['hp'] > 0) {
+    $keepFighting = dealDamages($warrior, $mage);
+    if (!$keepFighting) {
+        break;
+    }
+    dealDamages($mage, $warrior);
+}
