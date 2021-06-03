@@ -60,6 +60,7 @@ function displayAverageByGrades($array) {
 displayAverageByGrades($grades['Albert']);
 
 function displayAllAveragesByGrades($arrayGrades) {
+    // Parcours de tableau associatif : $student correspond à la clé, et $grade la valeur
     foreach ($arrayGrades as $student => $grade) {
         echo 'La moyenne de ' . $student . ' est de ' . (array_sum($grade)/count($grade));
         echo '<br>';

@@ -30,6 +30,8 @@ echo '<br>';
 // 7.3.
 echo 'Exercice 7.3 : <br>';
 
+// Le & correspond à un passage par référence, c'est à dire que l'on
+// Veut modifier la variable à l'intérieur de la fonction
 function dealDamages($heroAtk, &$heroDef) {
     $heroDef['hp'] -= $heroAtk['damage'];
     if ($heroDef['hp'] <= 0) {
