@@ -45,7 +45,7 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    Vérifiez votre fonction à partir des héros utilisés la veille
 
 
-9. Faire une fonction qui simule un jeu de yatzee (https://fr.wikipedia.org/wiki/Yahtzee)
+7. Faire une fonction qui simule un jeu de yatzee (https://fr.wikipedia.org/wiki/Yahtzee)
    Le Yatzee est un jeu de lancer de dé (au nombre de 5)
    Vous devrez afficher chaque lancé de dé, on va rester simple et afficher quelque chose de ce style :
    (1) (4) (6) (2) (4)
@@ -68,6 +68,22 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    Faites une fonction qui prend en argument une coordonnée (a1) et pour cette coordonnée, renvoit si un bateau est présent sur cette case ou non
 
 
+9. Reprendre le Yam's et gérer les suites :
+   - Petite suite : 4 dés se suivent (1, 2, 3, 4 ou 2, 3, 4, 5 ou 3, 4, 5, 6)
+   - Grande suite : les 5 dés se suivent
+   
+
+10. Simuler un jeu de 52 cartes :
+   - 13 cartes par couleur (pique, trèfle, carreau et coeur)
+   - Les cartes vont de 1 à 10 et valet, dame roi
+
+   Vous représenterez dans premier temps le jeu de cartes dans un tableau tout simple
+   
+   
+   Faites une fonction pour mélanger le jeu de cartes
+   
+   
+   Faites une fonction qui permet de piocher X cartes
    
 
 
