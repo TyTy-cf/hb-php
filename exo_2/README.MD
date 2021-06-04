@@ -68,7 +68,7 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    - 13 cartes par couleur (pique, trèfle, carreau et coeur)
    - Les cartes vont de 1 à 10 et valet, dame roi
 
-   - Algo : 
+   - Algo création : 
       * Créer au préalable un tableau de 4 catégories (pour chaque couleur, pique, coeur etc)
       * Créer au préalable un tableau des valeurs des cartes (1,2, 3, ..., D, R)
       * Créer un tableau vide
@@ -78,6 +78,16 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
          * fin pour
       * fin pour
       * retourne le tableau des cartes remplies
+    
+    - Algo mélange :
+        * Créer un tableau TMP
+        * Tant que mon paquet de cartes initial n'est pas vide (>0)
+            * Récupérer un index de mon tableau de carte de manière aléatoire (de 0 à count de notre tableau de base)
+            * ajouter dans mon tableau TMP la valeur de mon tableau initial, dont l'index est celui généré aléatoirement
+            * supprimer de mon tableau initial la valeur récupérée (réduire la taille de mon tableau initial)
+        * fin tant que
+        * renvoie le tableau TMP
+        
 
 
    Vous représenterez dans premier temps le jeu de cartes dans un tableau tout simple
