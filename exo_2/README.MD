@@ -55,6 +55,11 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    - Carré (4 dés du même résultat)
    - Full (3 dés du même résultat et 2 dés du même résultat)
    - Yams (5 dés du même résultat)
+   - Petite suite : 4 dés se suivent (1, 2, 3, 4 ou 2, 3, 4, 5 ou 3, 4, 5, 6)
+   - Grande suite : les 5 dés se suivent
+
+
+7bis. Faire une fonction qui permet d'ajouter des 'fe' avant chaque voyelle d'une chaîne de caractère, passée en paramètre
 
 
 8. Créer un tableau associatif qui représentera l'espace d'une bataille navale
@@ -67,11 +72,6 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
 
    Faites une fonction qui prend en argument une coordonnée (a1) et pour cette coordonnée, renvoit si un bateau est présent sur cette case ou non
 
-
-9. Reprendre le Yam's et gérer les suites :
-   - Petite suite : 4 dés se suivent (1, 2, 3, 4 ou 2, 3, 4, 5 ou 3, 4, 5, 6)
-   - Grande suite : les 5 dés se suivent
-   
 
 10. Simuler un jeu de 52 cartes :
    - 13 cartes par couleur (pique, trèfle, carreau et coeur)
@@ -86,7 +86,7 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    Faites une fonction qui permet de piocher X cartes
    
 
-
+11. 
 
 
 
