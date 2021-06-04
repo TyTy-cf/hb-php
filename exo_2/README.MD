@@ -62,21 +62,9 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
 7bis. Faire une fonction qui permet d'ajouter des 'fe' après chaque voyelle d'une chaîne de caractère, et répéter la voyelle précédente, passée en paramètre
       
    // transform("Bonjour") => "Bofeonjofeoufeur"
-   
 
 
-8. Créer un tableau associatif qui représentera l'espace d'une bataille navale
-   Un jeu de bataille navale va de a à j, en ordonné et de 1 à 10, en abscisse
-   
-   Le jeu sera assimilé à un tableau associatif dont la clé vaut 'a1', 'a2' etc
-   Et la valeur 'true' ou 'false' pour indiquer la présence ou non d'un bateau
-   
-   Affichez votre tableau de jeu (avec ou sans html/css)
-
-   Faites une fonction qui prend en argument une coordonnée (a1) et pour cette coordonnée, renvoit si un bateau est présent sur cette case ou non
-
-
-10. Simuler un jeu de 52 cartes :
+8. Simuler un jeu de 52 cartes :
    - 13 cartes par couleur (pique, trèfle, carreau et coeur)
    - Les cartes vont de 1 à 10 et valet, dame roi
 
@@ -87,9 +75,38 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    
    
    Faites une fonction qui permet de piocher X cartes
-   
 
-11. 
+
+9. Créer un tableau associatif qui représentera l'espace d'une bataille navale
+   Un jeu de bataille navale va de a à j, en ordonné et de 1 à 10, en abscisse
+
+   Le jeu sera assimilé à un tableau associatif dont la clé vaut 'a1', 'a2' etc
+   Et la valeur 'true' ou 'false' pour indiquer la présence ou non d'un bateau
+
+   Affichez votre tableau de jeu (avec ou sans html/css)
+
+   Faites une fonction qui prend en argument une coordonnée (a1) et pour cette coordonnée, renvoit si un bateau est présent sur cette case ou non
+
+
+9bis. Faire une fonction qui, pour une coordonnée donnée, permet de récupérer les cases voisines (elle retourne un tableau de coordonnées), sur une certaine distance (passée en paramètre)
+      On retourne, bien sûr, que les cases existantes dans notre quadrillage d'origine.
+      
+      Optimisation : faire en sorte qu'elle puisse fonctionner aussi bien à l'horizontale, qu'à la verticale
+
+
+10. Jeu des petits cochons :
+   - Un cochon peut avoir : 4 pattes, 2 yeux, 1 queue, 2 oreilles
+   - Une fois le cochon assemblé, vous avez gagné !
+   - Pour se faire il faut lancer un dé spécial :
+      - Ce dé est composé de 6 faces :
+      * 3 avec des pattes
+      * 1 avec un oeil
+      * 1 avec une queue
+      * 1 avec une oreille
+        (Les faces avec les pattes, se sont pas toutes collées)
+        
+   Objectif (fonction à faire) :
+   - Vous devez compter en combien de lancé de dé vous avez réussi à assembler votre cochon ! 
 
 
 
