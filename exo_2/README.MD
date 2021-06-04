@@ -61,7 +61,7 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
 
 7bis. Faire une fonction qui permet d'ajouter des 'fe' après chaque voyelle d'une chaîne de caractère, et répéter la voyelle précédente, passée en paramètre
       
-   // transform("Bonjour") => "Bofeonjofeoupr"
+   // transform("Bonjour") => "Bofeonjofeoufeur"
    
 
 
