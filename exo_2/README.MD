@@ -68,6 +68,18 @@ Vous pouvez réutiliser la fonction de moyenne faites la veille...
    - 13 cartes par couleur (pique, trèfle, carreau et coeur)
    - Les cartes vont de 1 à 10 et valet, dame roi
 
+   - Algo : 
+      * Créer au préalable un tableau de 4 catégories (pour chaque couleur, pique, coeur etc)
+      * Créer au préalable un tableau des valeurs des cartes (1,2, 3, ..., D, R)
+      * Créer un tableau vide
+      * pour chaque catégorie, faire
+         * pour chaque valeur, faire
+            *  ajouter la combinaison valeur + catégorie dans un tableau
+         * fin pour
+      * fin pour
+      * retourne le tableau des cartes remplies
+
+
    Vous représenterez dans premier temps le jeu de cartes dans un tableau tout simple
    
    
