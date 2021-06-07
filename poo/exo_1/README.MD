@@ -8,9 +8,9 @@ Votre client souhaite concurrencer un grand site de musique en ligne.
 Vous devrez modéliser les classes nécessaire pour le faire.
 
 Votre application doit permettre de :
-* Stocker des chansons (un nom, une durée, un prix, une chanson a plusieurs artistes, une chanson a plusieurs style de musique)
+* Stocker des chansons (un nom, une durée, un prix, une chanson a plusieurs artistes)
 * Stocker des albums (un nom, une année de sortie, prix, un album est composé de plusieurs chansons, mais une chanson peut avoir plusieurs albums...)
-* Stocker les artistes (un nom, une nationalité, une année de début, un artiste a plusieurs albums)
+* Stocker les artistes (un nom, une nationalité, une année de début, un artiste a plusieurs albums, un artiste a plusieurs styles de musique
 * Stocker les styles de musiques (un nom)
 * Stocker les utilisateurs (??????)
 * Stocker les playlists des utilisateurs, une playlist est composé de plusieurs chansons, une chanson peut -être dans plusieurs playlist, une playlist a un nom, une date de création et une date de modification)
