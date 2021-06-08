@@ -14,6 +14,8 @@ class Artist
 
     /**
      * Artist constructor.
+     *
+     * Un constructeur permet de définir un comportement à l'instanciation de l'objet
      */
     public function __construct()
     {
@@ -21,6 +23,8 @@ class Artist
     }
 
     /**
+     * Un getter retourne l'attribut de votre classe
+     * Il permet de récupérer sa valeur en dehors de celle-ci
      * @return string
      */
     public function getName(): string
@@ -29,6 +33,8 @@ class Artist
     }
 
     /**
+     * Un setter permet de modifier l'attribut de votre classe
+     * Ici, il modifie l'attribut name, et ce en dehors de la classe
      * @param string $name
      */
     public function setName(string $name): void
