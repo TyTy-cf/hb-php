@@ -22,7 +22,12 @@ $artist->addStyle($style2);
 $artist->addStyle($style3);
 
 $user = new User();
-print_r($user);
+$date = (new DateTime())
+    ->setDate(1990, 1, 1)
+;
+$user->setBirthDate($date);
+echo $user->getAge();
+
 echo '<br>';
 
 echo $artist;

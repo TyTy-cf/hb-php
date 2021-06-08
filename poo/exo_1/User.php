@@ -10,7 +10,7 @@ class User
 
     private string $email;
 
-    private Date $birthDate;
+    private DateTime $birthDate;
 
     private DateTime $createdAt;
 
@@ -46,17 +46,17 @@ class User
     }
 
     /**
-     * @return Date
+     * @return DateTime
      */
-    public function getBirthDate(): Date
+    public function getBirthDate(): DateTime
     {
         return $this->birthDate;
     }
 
     /**
-     * @param Date $birthDate
+     * @param DateTime $birthDate
      */
-    public function setBirthDate(Date $birthDate): void
+    public function setBirthDate(DateTime $birthDate): void
     {
         $this->birthDate = $birthDate;
     }
@@ -101,6 +101,22 @@ class User
         if (!in_array($playlist, $this->playlists)) {
             $this->playlists[] = $playlist;
         }
+    }
+
+    /**
+     * Renvoie l'age de l'utilisateur, à partir de sa date de naissance
+     * @return string
+     */
+    public function getAge(): string
+    {
+        $age = 'Date de naissance non renseigné';
+        // isset : permet de savoir si la variable existe ou est initialisée
+        if (isset($this->birthDate)) {
+            $currentDate = new DateTime();
+            $interval = $currentDate->diff($this->birthDate);
+            return $interval->y;
+        }
+        return $age;
     }
 
 }

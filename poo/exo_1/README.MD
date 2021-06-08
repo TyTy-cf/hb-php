@@ -44,3 +44,9 @@ Voici un jeu de donnée pour créer vos objets :
  * (3, 'Hard rock')
 
 
+## 2. TP POO J2
+
+- Faites une fonction dans la classe Song, qui permet de récupérer la durée de celle-ci sous forme d'entier (en seconde)
+
+
+- Faites une fonction dans la classe album, qui permet de calculer la durée total de celui-ci, et de l'afficher sous forme : "hh:mm:ss"

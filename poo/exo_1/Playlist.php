@@ -62,7 +62,7 @@ class Playlist
     /**
      * @param Song $song
      */
-    public function addSongs(Song $song): void
+    public function addSong(Song $song): void
     {
         if (!in_array($song, $this->songs)) {
             $this->songs[] = $song;
