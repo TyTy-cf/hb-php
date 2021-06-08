@@ -4,9 +4,13 @@ include_once('style.php');
 
 class Artist
 {
-    private array $styles;
 
-    private string $name;
+    use TraitName;
+
+    /**
+     * @var Style[]
+     */
+    private array $styles;
 
     private string $nationality;
 
@@ -20,26 +24,6 @@ class Artist
     public function __construct()
     {
         $this->styles = [];
-    }
-
-    /**
-     * Un getter retourne l'attribut de votre classe
-     * Il permet de récupérer sa valeur en dehors de celle-ci
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * Un setter permet de modifier l'attribut de votre classe
-     * Ici, il modifie l'attribut name, et ce en dehors de la classe
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
     }
 
     /**
