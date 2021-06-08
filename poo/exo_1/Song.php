@@ -69,4 +69,16 @@ class Song
         return $this->name . ' (' . $this->duration . ')';
     }
 
+    public function getIntDuration(): int
+    {
+        // chaine initiale : '00:01:50'
+        // $explodedDuration[] = ['00', '01', '50']
+        $explodedDuration = explode(':', $this->duration);
+        return
+            ($explodedDuration[0] * 3600)
+          + ($explodedDuration[1] * 60)
+          + $explodedDuration[2]
+        ;
+    }
+
 }

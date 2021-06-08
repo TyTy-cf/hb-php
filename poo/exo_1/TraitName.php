@@ -16,10 +16,13 @@ trait TraitName
 
     /**
      * @param string $name
+     * @return Playlist|Album|Artist|Song|Style|TraitName|User
      */
-    public function setName(string $name): void
+    public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
     }
 
 }

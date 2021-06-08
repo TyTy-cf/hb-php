@@ -16,6 +16,14 @@ class Album
     private array $songs;
 
     /**
+     * Album constructor.
+     */
+    public function __construct()
+    {
+        $this->songs = [];
+    }
+
+    /**
      * @return int
      */
     public function getReleasedYear(): int
@@ -63,6 +71,29 @@ class Album
         if (!in_array($song, $this->songs)) {
             $this->songs[] = $song;
         }
+    }
+
+    public function getAlbumDuration(): string
+    {
+        $totalDuration = 0;
+        foreach ($this->songs as $song) {
+            $totalDuration += $song->getIntDuration();
+        }
+        $seconds = $totalDuration % 60;
+        $minutes = floor($totalDuration / 60);
+        $minutes = $minutes % 60;
+        $hours = floor($minutes / 60);
+        $hours = $hours % 60;
+        if ($minutes < 10) {
+            $minutes = '0' . $minutes;
+        }
+        if ($hours < 10) {
+            $hours = '0' . $hours;
+        }
+        if ($seconds < 10) {
+            $seconds = '0' . $seconds;
+        }
+        return $hours . ':' . $minutes. ':' . $seconds;
     }
 
 }

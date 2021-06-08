@@ -36,10 +36,13 @@ class Artist
 
     /**
      * @param string $nationality
+     * @return Artist
      */
-    public function setNationality(string $nationality): void
+    public function setNationality(string $nationality): Artist
     {
         $this->nationality = $nationality;
+
+        return $this;
     }
 
     /**
@@ -52,22 +55,27 @@ class Artist
 
     /**
      * @param int $beginningYear
+     * @return Artist
      */
-    public function setBeginningYear(int $beginningYear): void
+    public function setBeginningYear(int $beginningYear): Artist
     {
         $this->beginningYear = $beginningYear;
+
+        return $this;
     }
 
     public function getStyles(): array {
         return $this->styles;
     }
 
-    public function addStyle(Style $style): void {
+    public function addStyle(Style $style): Artist {
         // Si le Style en paramètre n'existe pas dans le tableau
         // Alors on l'ajoute
         if (!in_array($style, $this->styles)) {
             $this->styles[] = $style;
         }
+
+        return $this;
     }
 
     public function __toString(): string
