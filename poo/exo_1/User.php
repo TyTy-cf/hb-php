@@ -114,6 +114,8 @@ class User
         if (isset($this->birthDate)) {
             $currentDate = new DateTime();
             $interval = $currentDate->diff($this->birthDate);
+            // $interval est de type DateInterval (voir doc)
+            // Grâce à cet objet on peut récupérer les années, les mois, les jours... etc
             return $interval->y;
         }
         return $age;

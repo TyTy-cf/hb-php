@@ -25,9 +25,10 @@
 - damageMax : int
 
 
-* Par défaut, tous les héros créés sont de niveau 1
-* scoreCriticalStrike : 12%
-* criticalDamage : 150%
+* Par défaut :
+    * tous les héros créés sont de niveau 1
+    * scoreCriticalStrike : 12%
+    * criticalDamage : 150%
 
 ## Héritage
 
