@@ -76,7 +76,7 @@ abstract class Hero
     protected function setAgility(int $agility)
     {
         $this->agility += $agility;
-        $this->defense += $agility / 6;
+        $this->defense += round($agility / 6, 2);
     }
 
     /**
@@ -214,6 +214,7 @@ abstract class Hero
         $string .= 'Intelligence : ' . $this->intelligence . '<br>';
         $string .= 'HP : ' . $this->hp . '/' . $this->hpMax . '<br>';
         $string .= 'Mana : ' . $this->mana . '/' . $this->manaMax . '<br>';
+        $string .= 'Defense : ' . $this->defense . '<br>';
         $string .= 'Degats min : ' . $this->damageMin . '<br>';
         $string .= 'Degats max : ' . $this->damageMax . '<br>';
         $string .= 'Score crit : ' . $this->scoreCriticalStrike . '<br>';
