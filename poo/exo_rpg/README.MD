@@ -100,3 +100,25 @@
   
 
 /!\ Pensez que vos caractéristiques vont changer... Les dégâts aussi !
+
+
+### Suite du TP...
+
+#### Pour la partie design (facultatif...)
+
+* Ajouter un attribut color à notre classe Hero
+  * Un Mage a la couleur bleu ciel
+  * Un rogue a la couleur jaune
+  * Un Warrior a la couleur marron
+* Gérer ce cas de figure... Vous vous servirez de la couleur pour soit une bordure soit une couleur de fond pour les cards héros.
+
+
+#### Pour la suite du TP
+
+* Faire une fonction qui fait qu'un héro attaque un autre héro
+  * Un héro a une attaque qui varie entre ses damageMin et damageMax
+  * Toutefois... Un héros peut effectuer des coups critiques ! C'est à dire que chaque héro a une chance d'effectuer un coup critique égale à **scoreCriticalStrike**) et ses dégâts seront multiplié par **criticalDamage**   
+  * Un héro réduit les dégâts qu'il subit grâce a sa défense, qui n'est autre qu'un pourcentage (c'est à dire, qu'un mage level 2, a 1.5 de défense, il réduit les dégâts subit de 1.5%)
+  * Une fois les dégâts réduit par la défense, le héro peut perdre ses points de vie
+  
+

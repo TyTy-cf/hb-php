@@ -33,3 +33,5 @@ $warrior->levelUp();
 echo $warrior;
 
 
+$warrior->attack($mage);
+
