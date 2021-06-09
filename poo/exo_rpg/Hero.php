@@ -24,9 +24,10 @@ class Hero
         $this->criticalDamage = 1.5;
     }
 
-    protected function setDamages(int $carac) {
+    protected function setAttributesFromMainCarac(int $carac) {
         $this->damageMin = $carac * 1.2;
-        $this->damageMax = $carac * 1.;
+        $this->damageMax = $carac * 1.4;
+        $this->scoreCriticalStrike += ($carac * 0.08);
     }
 
 }
