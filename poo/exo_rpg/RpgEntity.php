@@ -1,5 +1,6 @@
 <?php
 
+include_once('Ability.php');
 
 /**
  * Class RpgEntity.php
@@ -28,6 +29,8 @@ abstract class RpgEntity
     protected int $damageMin = 0;
 
     protected int $damageMax = 0;
+
+    protected Ability $ability;
 
     /**
      * @return int
@@ -112,11 +115,11 @@ abstract class RpgEntity
     }
 
     /**
-     * @return string
+     * @return Ability
      */
-    public function getName(): string
+    public function getAbility(): Ability
     {
-        return $this->name;
+        return $this->ability;
     }
 
     /**
@@ -154,12 +157,28 @@ abstract class RpgEntity
      * @param RpgEntity $rpgEntityTarget
      * @return bool
      */
-    public function attack(RpgEntity$rpgEntityTarget): bool
+    public function attack(RpgEntity $rpgEntityTarget): bool
     {
         // On vérifit si les points de vie de la cible ou de mon $this sont inférieur ou égale à 0
         // Si oui, on arrête de suite la fonction
         if ($rpgEntityTarget->isDead() || $this->isDead()) {
             return false;
+        }
+        // get_class : renvoie le nom de la classe en paramètre sous forme de chaine de caractères
+        $name = get_class($this);
+        // instanceof permet de connaître le type de l'objet qui le suit
+        if ($this instanceof Hero) {
+            $name = $this->getName();
+        }
+        $nameTarget = get_class($rpgEntityTarget);
+        if ($rpgEntityTarget instanceof Hero) {
+            $nameTarget = $rpgEntityTarget->getName();
+        }
+        if (isset($this->ability)) { // ability non null
+            if ($this->useAbility($rpgEntityTarget, $name, $nameTarget)) {
+                return true;
+            }
+            $this->ability->setTurn($this->ability->getTurn() - 1);
         }
         // Déterminer les dégâts du héro courant (à partir de ses damagesMin et Max)
         $damage = $this->getDamages();
@@ -180,22 +199,61 @@ abstract class RpgEntity
         $rpgEntityTarget->hp -= $damage;
 
         // Affichage de l'information des dégâts
-        // get_class : renvoie le nom de la classe en paramètre sous forme de chaine de caractères
-        $name = get_class($this);
-        // instanceof permet de connaître le type de l'objet qui le suit
-        if ($this instanceof Hero) {
-            $name = $this->getName();
-        }
-        $nameTarget = get_class($rpgEntityTarget);
-        if ($rpgEntityTarget instanceof Hero) {
-            $nameTarget = $rpgEntityTarget->getName();
-        }
         $string = $name . ' a attaqué ' . $nameTarget . ' pour ' . $damage . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')';
         if ($isCritical) {
             $string .= '(Coup critique !)';
         }
         echo $string . '<br>';
         return true;
+    }
+
+    /**
+     * @param RpgEntity $rpgEntityTarget
+     * @param string $name
+     * @param string $nameTarget
+     * @return bool
+     */
+    private function useAbility(RpgEntity $rpgEntityTarget, string $name, string $nameTarget): bool
+    {
+        if ($this->ability->getTurn() === 0 && $this->ability->getManaCost() <= $this->mana) {
+            $this->ability->setTurn(3);
+            $rpgEntityTarget->hp -= $this->ability->getDamage();
+            $this->mana -= $this->ability->getManaCost();
+            $string = $name . ' a attaqué ' . $nameTarget . ' pour ' . $this->ability->getDamage() . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')<br>';
+            echo $string;
+            return true;
+        }
+        if ($this instanceof Mage) {
+            echo 'JE LANCE UNE TONGUE <br>';
+        }
+        return false;
+    }
+
+    public function __toString(): string
+    {
+        // get_class vous donne le nom de la classe en string
+        $string = 'Classe : ' . get_class($this) . '<br>';
+        $string .= 'Level : ' . $this->level . '<br>';
+        if ($this instanceof Hero) {
+            $string .= 'Nom : ' . $this->name . '<br>';
+            $string .= 'Force : ' . $this->strength . '<br>';
+            $string .= 'Agilité : ' . $this->agility . '<br>';
+            $string .= 'Intelligence : ' . $this->intelligence . '<br>';
+        }
+        $string .= 'HP : ' . $this->hp . '/' . $this->hpMax . '<br>';
+        $string .= 'Mana : ' . $this->mana . '/' . $this->manaMax . '<br>';
+        $string .= 'Defense : ' . $this->defense . '<br>';
+        $string .= 'Degats min : ' . $this->damageMin . '<br>';
+        $string .= 'Degats max : ' . $this->damageMax . '<br>';
+        $string .= 'Score crit : ' . $this->scoreCriticalStrike . '<br>';
+        $string .= 'Crit damage : x' . $this->criticalDamage . '<br>';
+        if (isset($this->ability)) {
+            $string .= 'Abilité  : <br>';
+            $string .= 'Nom : ' . $this->ability->getName() . '<br>';
+            $string .= 'Dégâts  : ' . $this->ability->getDamage() . '<br>';
+            $string .= 'Coût en mana : ' . $this->ability->getManaCost(). '<br>';
+        }
+        return $string;
     }
 
 }

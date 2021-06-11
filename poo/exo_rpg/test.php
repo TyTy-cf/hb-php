@@ -40,21 +40,21 @@ echo '<br>';
 echo '<br>';
 
 $gobelin = new Gobelin(60);
-print_r($gobelin);
+echo $gobelin;
 
 echo '<br>';
 
 echo '<br>';
 
 $dragon = new Dragon(60);
-print_r($dragon);
+echo $dragon;
 
 echo '<br>';
 
 echo '<br>';
 
 $ogre = new Ogre(60);
-print_r($ogre);
+echo $ogre;
 
 echo '<br>';
 
@@ -70,6 +70,7 @@ $index = rand(0, 2);
 while(($mage->attack($dragon) && $warrior->attack($dragon) && $rogue->attack($dragon)) && !$dragon->isDead()) {
     $dragon->attack($heros[$index]);
     $index = rand(0, 2);
+    echo '------------ FIN DE ROUND --------------<br>';
 }
 echo '<br>';
 //$dragon = new Dragon(60);

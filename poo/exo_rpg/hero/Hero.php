@@ -125,23 +125,4 @@ abstract class Hero extends RpgEntity
 
     abstract function levelUp(): void;
 
-    public function __toString()
-    {
-        // get_class vous donne le nom de la classe en string
-        $string = 'Classe : ' . get_class($this) . '<br>';
-        $string .= 'Nom : ' . $this->name . '<br>';
-        $string .= 'Level : ' . $this->level . '<br>';
-        $string .= 'Force : ' . $this->strength . '<br>';
-        $string .= 'Agilité : ' . $this->agility . '<br>';
-        $string .= 'Intelligence : ' . $this->intelligence . '<br>';
-        $string .= 'HP : ' . $this->hp . '/' . $this->hpMax . '<br>';
-        $string .= 'Mana : ' . $this->mana . '/' . $this->manaMax . '<br>';
-        $string .= 'Defense : ' . $this->defense . '<br>';
-        $string .= 'Degats min : ' . $this->damageMin . '<br>';
-        $string .= 'Degats max : ' . $this->damageMax . '<br>';
-        $string .= 'Score crit : ' . $this->scoreCriticalStrike . '<br>';
-        $string .= 'Crit damage : x' . $this->criticalDamage . '<br>';
-        return $string;
-    }
-
 }

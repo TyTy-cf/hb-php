@@ -16,6 +16,6 @@ class Dragon extends Monstre
      */
     public function __construct(int $level)
     {
-        parent::__construct($level, 130, 81, 0.7, 8.3, 8.6, 0.33, 1.65);
+        parent::__construct($level, 140, 81, 0.7, 8.6, 8.9, 0.33, 1.65);
     }
 }
