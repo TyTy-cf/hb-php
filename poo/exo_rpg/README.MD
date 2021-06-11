@@ -113,7 +113,13 @@
 * Gérer ce cas de figure... Vous vous servirez de la couleur pour soit une bordure soit une couleur de fond pour les cards héros.
 
 
-#### Pour la suite du TP
+#### Pour la suite du TP - fonction setLevel
+
+* L'idée est de faire une fonction setLevel, qui prenne en paramètre un entier, qui représentera le niveau à donner à notre héro
+* Il faut gérer la modification des caractéristiques en fonction de son niveau
+
+
+#### Pour la suite du TP - PAS FAIRE POUR LE MOMENT
 
 * Faire une fonction qui fait qu'un héro attaque un autre héro
   * Un héro a une attaque qui varie entre ses damageMin et damageMax
