@@ -1,6 +1,7 @@
 <?php
 
 include_once('RpgEntity.php');
+include_once('Race.php');
 
 abstract class Hero extends RpgEntity
 {
@@ -12,6 +13,8 @@ abstract class Hero extends RpgEntity
     protected int $strength = 0;
 
     protected string $name;
+
+    protected Race $race;
 
     /**
      * Hero constructor.
@@ -64,6 +67,47 @@ abstract class Hero extends RpgEntity
         $this->agility += $agility;
         $this->defense += round($agility / 6, 2);
     }
+
+    /**
+     * @return int
+     */
+    public function getIntelligence(): int
+    {
+        return $this->intelligence;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAgility(): int
+    {
+        return $this->agility;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStrength(): int
+    {
+        return $this->strength;
+    }
+
+    /**
+     * @return Race
+     */
+    public function getRace(): Race
+    {
+        return $this->race;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
 
     /**
      * Set un level à un héro, le héro arrive directement à ce niveau

@@ -34,7 +34,7 @@ abstract class Monstre extends RpgEntity
     ) {
         $this->level = $level;
         $this->hp = $hpCoef * $this->level;
-        $this->hpMax = $manaCoef * $this->level;
+        $this->hpMax = $hpCoef * $this->level;
         $this->mana = $manaCoef * $this->level;
         $this->manaMax = $manaCoef * $this->level;
         $this->defense = $defenseCoef * $this->level;

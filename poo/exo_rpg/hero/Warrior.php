@@ -13,7 +13,7 @@ class Warrior extends Hero
 
     function levelUp(): void
     {
-        $this->updateMainAttributes(5, 1, 2);
+        $this->updateMainAttributes(5, 2, 2);
         $this->updateAttributesFromCarac(5);
     }
 }

@@ -10,7 +10,7 @@ class Rogue extends Hero
      */
     public function __construct(string $name)
     {
-        parent::__construct(13, 25, 11, $name);
+        parent::__construct(14, 30, 11, $name);
         $this->updateAttributesFromCarac($this->agility);
         $this->criticalDamage = 1.75;
     }

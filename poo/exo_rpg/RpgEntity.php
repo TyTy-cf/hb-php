@@ -82,30 +82,6 @@ abstract class RpgEntity
     /**
      * @return int
      */
-    public function getIntelligence(): int
-    {
-        return $this->intelligence;
-    }
-
-    /**
-     * @return int
-     */
-    public function getAgility(): int
-    {
-        return $this->agility;
-    }
-
-    /**
-     * @return int
-     */
-    public function getStrength(): int
-    {
-        return $this->strength;
-    }
-
-    /**
-     * @return int
-     */
     public function getHp(): int
     {
         return $this->hp;
@@ -151,14 +127,75 @@ abstract class RpgEntity
         return $this->defense;
     }
 
+    public function isDead(): bool
+    {
+        return $this->getHp() <= 0;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDamages(): int
+    {
+        return rand($this->damageMin, $this->damageMax);
+    }
+
+    /**
+     * @return float
+     */
+    public function getCoefficientDefense(): float
+    {
+        return ((100 - $this->defense) / 100);
+    }
+
     /**
      * Une RpgEntity attaque une autre RpgEntity
      *
-     * @param RpgEntity $rpgEntity
+     * @param RpgEntity $rpgEntityTarget
+     * @return bool
      */
-    public function attack(RpgEntity $rpgEntity): void
+    public function attack(RpgEntity$rpgEntityTarget): bool
     {
+        // On vérifit si les points de vie de la cible ou de mon $this sont inférieur ou égale à 0
+        // Si oui, on arrête de suite la fonction
+        if ($rpgEntityTarget->isDead() || $this->isDead()) {
+            return false;
+        }
+        // Déterminer les dégâts du héro courant (à partir de ses damagesMin et Max)
+        $damage = $this->getDamages();
+        $isCritical = false;
 
+        // Déterminer si le héro courant critique ou non (à partir de l'attribut scoreCriticalStrike)
+        // mt_rand : permet d'avoir un nombre aléatoire compris entre les 2 nombres, mais il inclue les float
+        if (mt_rand(1, 100) <= $this->scoreCriticalStrike) {
+            $damage *= $this->criticalDamage;
+            $isCritical = true;
+        }
+
+        // Déterminer la réduction de la défense de $rpgEntity (défense est en % !!!)
+        // Déterminer les dégâts infligé après réduction de la défense
+        $damage *= $rpgEntityTarget->getCoefficientDefense();
+
+        // Réduire les points de vie de $rpgEntity du montant de dégât infligés
+        $rpgEntityTarget->hp -= $damage;
+
+        // Affichage de l'information des dégâts
+        // get_class : renvoie le nom de la classe en paramètre sous forme de chaine de caractères
+        $name = get_class($this);
+        // instanceof permet de connaître le type de l'objet qui le suit
+        if ($this instanceof Hero) {
+            $name = $this->getName();
+        }
+        $nameTarget = get_class($rpgEntityTarget);
+        if ($rpgEntityTarget instanceof Hero) {
+            $nameTarget = $rpgEntityTarget->getName();
+        }
+        $string = $name . ' a attaqué ' . $nameTarget . ' pour ' . $damage . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')';
+        if ($isCritical) {
+            $string .= '(Coup critique !)';
+        }
+        echo $string . '<br>';
+        return true;
     }
 
 }

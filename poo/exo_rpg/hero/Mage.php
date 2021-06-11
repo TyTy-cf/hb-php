@@ -11,13 +11,13 @@ class Mage extends Hero
      */
     public function __construct(string $name)
     {
-        parent::__construct(15, 8, 27, $name);
+        parent::__construct(13, 8, 36, $name);
         $this->updateAttributesFromCarac($this->intelligence);
     }
 
     function levelUp(): void
     {
-        $this->updateMainAttributes(1, 1, 6);
+        $this->updateMainAttributes(2, 1, 6);
         $this->updateAttributesFromCarac(6);
     }
 }
