@@ -33,6 +33,10 @@ abstract class Hero
 
     /**
      * Hero constructor.
+     * @param int $strength
+     * @param int $agility
+     * @param int $intelligence
+     * @param string $name
      */
     public function __construct(
         int $strength, int $agility, int $intelligence, string $name
@@ -77,6 +81,20 @@ abstract class Hero
     {
         $this->agility += $agility;
         $this->defense += round($agility / 6, 2);
+    }
+
+    /**
+     * Set un level à un héro, le héro arrive directement à ce niveau
+     * Cependant, le niveau passé en paramètre doit être forcément supérieur au niveau actuel, sinon il ne se passera rien
+     *
+     * @param int $newLevel
+     */
+    public function setLevel(int $newLevel):void {
+        if ($newLevel > $this->level) {
+            for ($i=$this->level; $i < $newLevel; $i++){
+                $this->levelUp();
+            }
+        }
     }
 
     /**

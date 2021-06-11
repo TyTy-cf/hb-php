@@ -10,6 +10,7 @@ echo $mage;
 echo '<br>';
 
 $mage->levelUp();
+$mage->setLevel(60);
 echo $mage;
 
 echo '<br>';
@@ -33,5 +34,5 @@ $warrior->levelUp();
 echo $warrior;
 
 
-$warrior->attack($mage);
+//$warrior->attack($mage);
 
