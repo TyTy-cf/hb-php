@@ -153,3 +153,46 @@ Créer des Ogres et des Dragons
   * (Penser à faire un echo pour indiquer les dégâts infligés (suivi de CC si c'est un coup critique))
   
 
+### Ajout des Ability
+
+* Il va falloir créer une classe Ability
+  * damage : int (pas de gestion de min/max)
+  * name : string
+  * coût de mana : int
+  
+* Une RpgEntity peut avoir une Ability (ou ne pas en avoir)
+
+* Il faudra prévoir de faire une fonction : useAbility(RpgEntity)
+  (=> même fonctionnement que l'attaque).
+  Sauf :
+  * Une RpgEntity peut utiliser son Ability tous les 3 tours
+  * Lorsqu'il le fait, il doit dépenser son mana (on retire le coût en mana de l'ability depuis le mana de la RpgEntity)
+    
+    Si le héro n'a pas le mana nécessaire, il ne peut pas utiliser son Ability
+    
+    (Dans le cas d'un Mage, il lancera une tongue : un simple echo suffira...)
+    
+  * Une Ability ne critique pas
+  * Une Ability ne peut pas être réduite par la défense
+  * Lorsqu'une RpgEntity utilise son Ability, on réduit directement les points de vie de la cible (si la RpgEntity a le mana nécessaire, bien sûr...)
+
+#### Ability à créer par Héro :
+
+(Ils auront toujours cette même capacité)
+
+* Mage : 
+  * name : Boule de feu
+  * coût : 110 mana
+  * damage : caractéristique principale x 2 (Rappel : c'est l'intelligence)
+
+* Warrior :
+  * name : Heurtoir
+  * coût : 150 mana
+  * damage : caractéristique principale x 1.8 (Rappel : c'est la force)
+
+* Rogue :
+  * name : Embuscade
+  * coût : 160 mana
+  * damage : caractéristique principale x 1.9 (Rappel : c'est l'agilité)
+
+(Il faudra peut-être les créer à un endroit précis...)
