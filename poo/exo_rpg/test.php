@@ -3,6 +3,7 @@
 include_once('hero/Mage.php');
 include_once('hero/Warrior.php');
 include_once('hero/Rogue.php');
+include_once('monstres/Gobelin.php');
 
 $mage = new Mage('Valerie');
 echo $mage;
@@ -32,6 +33,9 @@ echo '<br>';
 
 $warrior->levelUp();
 echo $warrior;
+
+$gobelin = new Gobelin(5);
+print_r($gobelin);
 
 
 //$warrior->attack($mage);

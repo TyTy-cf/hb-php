@@ -151,6 +151,11 @@ abstract class RpgEntity
         return $this->defense;
     }
 
+    /**
+     * Une RpgEntity attaque une autre RpgEntity
+     *
+     * @param RpgEntity $rpgEntity
+     */
     public function attack(RpgEntity $rpgEntity): void
     {
 

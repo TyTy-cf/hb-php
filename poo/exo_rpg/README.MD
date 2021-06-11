@@ -119,12 +119,37 @@
 * Il faut gérer la modification des caractéristiques en fonction de son niveau
 
 
-#### Pour la suite du TP - PAS FAIRE POUR LE MOMENT
+#### Pour la suite du TP
 
-* Faire une fonction qui fait qu'un héro attaque un autre héro
-  * Un héro a une attaque qui varie entre ses damageMin et damageMax
-  * Toutefois... Un héros peut effectuer des coups critiques ! C'est à dire que chaque héro a une chance d'effectuer un coup critique égale à **scoreCriticalStrike**) et ses dégâts seront multiplié par **criticalDamage**   
-  * Un héro réduit les dégâts qu'il subit grâce a sa défense, qui n'est autre qu'un pourcentage (c'est à dire, qu'un mage level 2, a 1.5 de défense, il réduit les dégâts subit de 1.5%)
-  * Une fois les dégâts réduit par la défense, le héro peut perdre ses points de vie
+
+Créer des Ogres et des Dragons
+
+* Ogres :
+   * @param int $hpCoef => 112
+   * @param int $manaCoef => 71
+   * @param float $defenseCoef => 0.5
+   * @param int $damageMinCoef => 6.4
+   * @param int $damageMaxCoef => 6.8
+   * @param float $scoreCriticalStrikeCoef => 0.28
+   * @param float $criticalDamageCoef => 1.5
+
+* Dragons :
+  * @param int $hpCoef => 130
+  * @param int $manaCoef => 81
+  * @param float $defenseCoef => 0.7
+  * @param int $damageMinCoef => 8.3
+  * @param int $damageMaxCoef => 8.6
+  * @param float $scoreCriticalStrikeCoef => 0.33
+  * @param float $criticalDamageCoef => 1.65
+
+
+#### Pour la suite du TP
+
+* Faire une fonction qui fait qu'une RpgEntity attaque une autre RpgEntity
+  * Un RpgEntity a une attaque qui varie entre ses damageMin et damageMax
+  * Toutefois... Un RpgEntity peut effectuer des coups critiques ! C'est à dire que chaque RpgEntity a une chance d'effectuer un coup critique égale à **scoreCriticalStrike**) et ses dégâts seront multiplié par **criticalDamage**   
+  * Un RpgEntity réduit les dégâts qu'il subit grâce a sa défense, qui n'est autre qu'un pourcentage (c'est à dire, qu'un mage level 2, a 1.5 de défense, il réduit les dégâts subit de 1.5%)
+  * Une fois les dégâts réduit par la défense, le RpgEntity qui se fait attaquer peut perdre ses points de vie
+  * (Penser à faire un echo pour indiquer les dégâts infligés (suivi de CC si c'est un coup critique))
   
 
