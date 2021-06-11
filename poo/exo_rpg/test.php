@@ -1,8 +1,8 @@
 <?php
 
-include_once('Mage.php');
-include_once('Warrior.php');
-include_once('Rogue.php');
+include_once('hero/Mage.php');
+include_once('hero/Warrior.php');
+include_once('hero/Rogue.php');
 
 $mage = new Mage('Valerie');
 echo $mage;

@@ -7,6 +7,7 @@ class Mage extends Hero
 
     /**
      * Mage constructor.
+     * @param string $name
      */
     public function __construct(string $name)
     {
