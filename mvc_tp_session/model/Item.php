@@ -11,21 +11,21 @@ class Item
 
     private string $logo;
 
-    private float $prince;
+    private float $price;
 
     /**
      * Item constructor.
      * @param string $name
      * @param string $logo
-     * @param float $prince
+     * @param float $price
      */
-    public function __construct(string $name, string $logo, float $prince)
+    public function __construct(string $name, string $logo, float $price)
     {
         $this->id = self::$staticId;
         self::$staticId++;
         $this->name = $name;
         $this->logo = $logo;
-        $this->prince = $prince;
+        $this->price = $price;
     }
 
     /**
@@ -55,9 +55,9 @@ class Item
     /**
      * @return float
      */
-    public function getPrince(): float
+    public function getPrice(): float
     {
-        return $this->prince;
+        return $this->price;
     }
 
 }
