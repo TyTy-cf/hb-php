@@ -3,13 +3,11 @@ session_start();
 
 include_once 'item.php';
 
-$selectedConsole = null;
 $itemIndex = 0;
 
 foreach ($_POST as $content => $empty) {
     $itemIndex = substr($content, strlen('itemDelete'), strlen($content));
     $arrayKeys = array_keys($item);
-    $selectedConsole = $arrayKeys[$itemIndex];
 }
 
 if(isset($_SESSION['item'.$itemIndex])) {
@@ -18,4 +16,5 @@ if(isset($_SESSION['item'.$itemIndex])) {
         unset($_SESSION['item'.$itemIndex]);
     }
 }
+
 header('location:panier.php');

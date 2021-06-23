@@ -125,4 +125,14 @@ abstract class Hero extends RpgEntity
 
     abstract function levelUp(): void;
 
+    public function regen() {
+        $this->levelUp();
+        if ($this->hp < $this->hpMax) {
+            $this->hp += ($this->hpMax - $this->hp) / 2;
+        }
+        if ($this->mana < $this->manaMax) {
+            $this->mana += ($this->manaMax - $this->mana) / 2;
+        }
+    }
+
 }

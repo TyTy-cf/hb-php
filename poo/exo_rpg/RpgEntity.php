@@ -32,6 +32,26 @@ abstract class RpgEntity
 
     protected Ability $ability;
 
+    protected string $image;
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     * @return RpgEntity
+     */
+    public function setImage(string $image): RpgEntity
+    {
+        $this->image = $image;
+        return $this;
+    }
+
     /**
      * @return int
      */
@@ -41,9 +61,9 @@ abstract class RpgEntity
     }
 
     /**
-     * @return float|int
+     * @return float
      */
-    public function getScoreCriticalStrike()
+    public function getScoreCriticalStrike(): float
     {
         return $this->scoreCriticalStrike;
     }
@@ -194,9 +214,13 @@ abstract class RpgEntity
         // Déterminer la réduction de la défense de $rpgEntity (défense est en % !!!)
         // Déterminer les dégâts infligé après réduction de la défense
         $damage *= $rpgEntityTarget->getCoefficientDefense();
+        $damage = round($damage);
 
         // Réduire les points de vie de $rpgEntity du montant de dégât infligés
         $rpgEntityTarget->hp -= $damage;
+        if ($rpgEntityTarget->hp < 0) {
+            $rpgEntityTarget->hp = 0;
+        }
 
         // Affichage de l'information des dégâts
         $string = $name . ' a attaqué ' . $nameTarget . ' pour ' . $damage . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')';
@@ -219,7 +243,7 @@ abstract class RpgEntity
             $this->ability->setTurn(3);
             $rpgEntityTarget->hp -= $this->ability->getDamage();
             $this->mana -= $this->ability->getManaCost();
-            $string = $name . ' a attaqué ' . $nameTarget . ' pour ' . $this->ability->getDamage() . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')<br>';
+            $string = '[ABILITY] ' . $name . ' a attaqué ' . $nameTarget . ' pour ' . $this->ability->getDamage() . ' dégâts (Il reste ' . $rpgEntityTarget->hp . ' à ' . $nameTarget . ')<br>';
             echo $string;
             return true;
         }
@@ -254,6 +278,66 @@ abstract class RpgEntity
             $string .= 'Coût en mana : ' . $this->ability->getManaCost(). '<br>';
         }
         return $string;
+    }
+
+    public function toHtml(): string {
+        $name = '';
+        if ($this instanceof Hero) {
+            $name = $this->getName();
+        }
+        $string = '<h2 class="card-header">'.get_class($this).' <i> '. $name .' ('. $this->level .')</i></h2>';
+        $string .= '
+            <table class="table table-striped w-100 table-entity">
+                <tbody>';
+        $string .= '<tr>
+                        <th class="hp-pool">'
+                            .$this->hp . '/' . $this->hpMax.'
+                        </th>
+                        <td class="mana-pool">'
+                            .$this->mana . '/' . $this->manaMax.'
+                        </td>
+                    </tr>';
+        $string .= $this->addThTd(
+            $this->getHtmlImgFromImage('images/sword.png'),
+            $this->damageMin . ' - ' . $this->damageMax
+        );
+        $string .= $this->addThTd(
+            $this->getHtmlImgFromImage('images/cs.png'),
+            $this->scoreCriticalStrike . '% (x' . $this->criticalDamage . ')'
+        );
+        $string .= $this->addThTd(
+            $this->getHtmlImgFromImage('images/defense.png'),
+            round($this->defense, 2)
+        );
+        if ($this instanceof Hero) {
+            $string .= $this->addThTd(
+                $this->getHtmlImgFromImage('images/strength.png'),
+                $this->getStrength()
+            );
+            $string .= $this->addThTd(
+                $this->getHtmlImgFromImage('images/agility.png'),
+                $this->getAgility()
+            );
+            $string .= $this->addThTd(
+                $this->getHtmlImgFromImage('images/intelligence.png'),
+                $this->getIntelligence()
+            );
+        }
+        if (isset($this->ability)) {
+            $string .= $this->addThTd('Ability Name', $this->ability->getName());
+            $string .= $this->addThTd('Ability Damage', $this->ability->getDamage());
+            $string .= $this->addThTd('Ability Mana cost', $this->ability->getManaCost());
+        }
+        $string .= '</table></tbody>';
+        return $string;
+    }
+
+    private function addThTd($thValue, $tdValue): string {
+        return '<tr><th>'.$thValue.'</th><td class="align-middle">'.$tdValue.'</td></tr>';
+    }
+
+    private function getHtmlImgFromImage(string $image): string {
+        return '<img class="icon" src="'.$image.'" alt="'.$image.'" title="'.$image.'">';
     }
 
 }

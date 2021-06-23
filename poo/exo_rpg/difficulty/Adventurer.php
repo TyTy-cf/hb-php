@@ -1,7 +1,7 @@
 <?php
 
 
-class Adventurer extends Explorator
+class Adventurer extends Explorateur
 {
 
     /**
@@ -10,7 +10,7 @@ class Adventurer extends Explorator
     public function __construct()
     {
         parent::__construct();
-        $this->monsters[] = ['Ogre', 'Ogre', 'Ogre'];
+        $this->monsters = array_merge($this->monsters, ['Ogre', 'Ogre', 'Ogre']);
         $this->maxIndex = count($this->monsters);
     }
 }

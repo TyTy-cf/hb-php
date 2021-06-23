@@ -7,9 +7,10 @@ class Warrior extends Hero
 
     public function __construct(string $name)
     {
-        parent::__construct(24, 12, 14, $name);
+        parent::__construct(26, 12, 12, $name);
         $this->updateAttributesFromCarac($this->strength);
-        $this->ability = new Ability('Heurtoir', 150, $this->strength * 1.8);
+        $this->ability = new Ability('Skullsplitter', 150, $this->strength * 1.8);
+        $this->setImage('images/warrior.png');
     }
 
     function levelUp(): void

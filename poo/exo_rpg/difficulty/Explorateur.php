@@ -1,7 +1,7 @@
 <?php
 
 
-class Explorator extends Difficulty
+class Explorateur extends Difficulty
 {
 
     /**

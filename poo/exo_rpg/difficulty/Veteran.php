@@ -10,7 +10,7 @@ class Veteran extends Adventurer
     public function __construct()
     {
         parent::__construct();
-        $this->monsters[] = ['Dragon', 'Dragon'];
+        $this->monsters = array_merge($this->monsters, ['Dragon', 'Dragon']);
         $this->maxIndex = count($this->monsters);
     }
 }

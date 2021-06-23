@@ -20,31 +20,11 @@ abstract class Difficulty
         $this->currentIndex = 0;
     }
 
-    /**
-     * @return String[]
-     */
-    public function getMonsters(): array
-    {
-        return $this->monsters;
+    public function hasMonstersLeft(): bool {
+        return $this->currentIndex < $this->maxIndex;
     }
 
-    /**
-     * @return int
-     */
-    public function getCurrentIndex(): int
-    {
-        return $this->currentIndex;
-    }
-
-    /**
-     * @return int
-     */
-    public function getMaxIndex(): int
-    {
-        return $this->maxIndex;
-    }
-
-    public function getMonsterByLevel(int $level): Monstre {
+    public function getMonsterByLevel(int $level): Monster {
         $monster = new $this->monsters[$this->currentIndex]($level);
         $this->currentIndex++;
         return $monster;
