@@ -1,7 +1,21 @@
 <?php
 
-// Récupèrez votre session
-// Récupérer pour chaque "id" d'item, l'item lié et le stocker dans une variable (array)
-// Que l'on pourra donc utiliser dans la vue (cart.php)
+include_once '../model/ItemCart.php';
+include_once '../model/ItemsRepository.php';
 
-// Pensez à ajouter depuis accueil.php la lien vers le panier...
+include 'session.php';
+
+$items = [];
+$sumCart = 0;
+$itemsRepo = new ItemsRepository();
+
+if (isset($_SESSION['itemsCart'])) {
+    foreach ($_SESSION['itemsCart'] as $itemId => $qty) {
+        if ($qty > 0) {
+            $explodedId = explode('#', $itemId);
+            $item = $itemsRepo->findItemById($explodedId[1]);
+            $items[] = new ItemCart($item, $qty);
+            $sumCart += $item->getPrice() * $qty;
+        }
+    }
+}
