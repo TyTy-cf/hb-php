@@ -11,11 +11,13 @@ class PokemonRepository
     private static ?PokemonRepository $instance = null;
 
     public static function getInstance(): PokemonRepository {
-        if (is_null(self::$instance)) {
-            echo 'oui';
-            self::$instance = new PokemonRepository();
+        if (!isset(PokemonRepository::$instance) && !isset($_SESSION['pokemon_repository'])) {
+            PokemonRepository::$instance = new PokemonRepository();
+            $_SESSION['pokemon_repository'] = self::getInstance();
+        } else if (isset($_SESSION['pokemon_repository'])) {
+            PokemonRepository::$instance = $_SESSION['pokemon_repository'];
         }
-        return self::$instance;
+        return PokemonRepository::$instance;
     }
 
     /**
