@@ -26,3 +26,46 @@ Toujours en MVC
 - A ce moment vous afficherez seulement son nom, avec son image logo, ses types et son numéro
 
 
+### COmpliquons les choses...
+
+Il faut maintenant afficher un peu plus d'informations de notre pokemon :
+(Toujours dans votre classe Pokemon)
+* Ses différentes statistiques de base :
+    * Dans "stats" > "base_stat"
+    * Il y en a 6 en tout, pour :
+        * hp
+        * attack
+        * defense
+        * special-attack
+        * special-defense
+        * speed
+    * Il nous faut sauvegarder les 6 informations relatives à notre pokemon
+    * Modifier votre code en conséquence
+
+* Préparez-votre code actuel à avoir des liens, lorsque l'on clique sur une image ou un nom de pokemon
+    afin d'aller vers une page de profil d'un pokemon. Dans celle-ci il y aura :
+    * Le nom du pokemon en titre de page
+    * Son official artwork
+    * Un rappel de son type
+    * Et un tableau de ses statistiques comme tel : https://pokemondb.net/pokedex/charizard
+    
+### Avancons...
+
+* Je veux maintenant connaître les "abilities" possible de mon pokemon
+* Il faut donc créer une nouvelle classe pour les stocker
+* Il faudra aussi les créer lors de la récupération de nos pokemons
+  (vous les trouverer dans "abilities" du Json d'un pokemon)
+* Notez qu'un pokemon peut avoir plusieurs abilities, penser à le prévoir !
+    * Une ability doit être représenter par :
+        * Son nom
+        * Son effet (effect_entries dans le Json), vous sauvegarderez celui en anglais, bien sûr
+    
+* Une fois que ces informations sont récupérés, vous afficherez les différentes abilities d'un pokemon sur la vue de son profil
+
+
+
+
+        
+
+
+
