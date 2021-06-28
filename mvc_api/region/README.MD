@@ -31,5 +31,10 @@ Je veux :
 - Les classe métier adequates
 - Les "repo" (qui fetch depuis l'api)
 
+### 28/06/2021
+
+* Un formulaire pour rechercher un département, par nom ou code
+* Un formulaire pour rechercher une ville par numéro de département, ou code postal
+
 
 

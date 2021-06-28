@@ -62,6 +62,15 @@ Il faut maintenant afficher un peu plus d'informations de notre pokemon :
     
 * Une fois que ces informations sont récupérés, vous afficherez les différentes abilities d'un pokemon sur la vue de son profil
 
+### 28/06/2021 
+
+* Faire une pagination, simple : précédent et suivant, vous pouvez faire un "suivant++" qui avance deux fois plus vite et un précédent-- qui recule deux fois plus vite.
+* (PS : Vous pouvez réduire la quantité de pokemons à afficher, 0-12 ?!)
+
+
+* (PS² : trouve run moyen de ne pas perdre nos pokemons lorsque l'on se déplace via pagination)
+* Faire un formulaire qui permettent d'interroger notre PokemonRepository et de renvoyer un pokemon en fonction de son nom
+* Et si c'est vraiment trop facile pour vous, ajouter la recherche par type
 
 
 
