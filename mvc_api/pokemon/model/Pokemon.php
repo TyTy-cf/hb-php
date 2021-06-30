@@ -1,29 +1,64 @@
 <?php
 
-
 class Pokemon
 {
+
     private string $name;
-    private string $logo;
-    private string $bigImage;
-    private string $number;
+    private string $logoSprites;
+    private string $logoArtwork;
+    private string $order;
     private array $types;
+    private array $stats;
+    private array $abilities;
+    private int $id;
 
     /**
-     * Pokemon constructor.
+     *Pokemon constructor
+     * @param int $id
      * @param string $name
-     * @param string $logo
-     * @param string $bigImage
-     * @param string $number
-     * @param array $types
+     * @param string $logoSprites
+     * @param string $logoArtwork
+     * @param string $order
+     * @param array $type
+     * @param array $stats
+     * @param array $abilities
      */
-    public function __construct(string $name, string $logo, string $bigImage, string $number, array $types)
+    public function __construct(
+        int $id, string $name, string $logoSprites, string $logoArtwork, string $order, array $type, array $stats,array $abilities
+    )
     {
+        $this->id = $id;
         $this->name = $name;
-        $this->logo = $logo;
-        $this->bigImage = $bigImage;
-        $this->number = $number;
-        $this->types = $types;
+        $this->logoSprites = $logoSprites;
+        $this ->logoArtwork = $logoArtwork;
+        $this->order = $order;
+        $this->types = $type;
+        $this->stats = $stats;
+        $this->abilities = $abilities;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStats(): array
+    {
+        return $this->stats;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAbilities(): array
+    {
+        return $this->abilities;
     }
 
     /**
@@ -37,25 +72,25 @@ class Pokemon
     /**
      * @return string
      */
-    public function getLogo(): string
+    public function getLogoSprites(): string
     {
-        return $this->logo;
+        return $this->logoSprites;
     }
 
     /**
      * @return string
      */
-    public function getBigImage(): string
+    public function getLogoArtwork(): string
     {
-        return $this->bigImage;
+        return $this->logoArtwork;
     }
 
     /**
      * @return string
      */
-    public function getNumber(): string
+    public function getOrder(): string
     {
-        return $this->number;
+        return $this->order;
     }
 
     /**

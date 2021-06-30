@@ -1,0 +1,232 @@
+.app-header{
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background-color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: navajowhite;
+    gap: 150px;
+    -webkit-box-shadow: 7px 6px 2px 1px rgba(0,0,0,0.22);
+    box-shadow: 7px 6px 2px 1px rgba(0,0,0,0.22);
+}
+
+body {
+    background-color: bisque;
+}
+
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+
+}
+.pokemon {
+    width: 15%;
+    border: 1px solid black;
+    min-height: 220px;
+    min-width:190px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: dimgray;
+    -webkit-box-shadow: 7px 6px 2px 1px rgba(0,0,0,0.22);
+    box-shadow: 7px 6px 2px 1px rgba(0,0,0,0.22);
+}
+
+.pokemon:hover{
+    background-color: lightslategrey;
+}
+
+.type {
+    -webkit-box-shadow: 2px 6px 6px -2px rgba(0,0,0,0.75);
+    box-shadow: 2px 6px 6px -2px rgba(0,0,0,0.75);
+}
+
+.types {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.poison {
+    background: linear-gradient(to bottom, #a566c7, #c85fd6);
+
+}
+.fire {
+    background: linear-gradient(to bottom, #ff9b54, #ffaf4a);
+}
+.grass {
+    background: linear-gradient(to bottom, #60b953, #58c47e);
+}
+.flying {
+    background: linear-gradient(to bottom, #8fa8dd, #a7c1ef);
+}
+.water {
+    background: linear-gradient(to bottom, #4e90d6, #73c7e5);
+}
+.bug {
+    background: linear-gradient(to bottom, #90c12d, #acc833);
+}
+.normal {
+    background: linear-gradient(to bottom, #9099a1, #aaa79e);
+}
+.electric {
+    background: linear-gradient(to bottom, #f4d13b, #fae276);
+}
+.ground {
+    background: linear-gradient(to bottom, #d97745, #d49a6c);
+}
+
+.pokeball {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: navajowhite;
+}
+
+a:hover {
+    color: navajowhite;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.pokemonDetail {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.name {
+    font-size: 20px;
+    text-decoration: underline;
+    padding-top: 20px;
+}
+
+.nomPokemon{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.leftDisplay {
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.logoArtwork{
+    position: absolute;
+}
+
+.is-hidden {
+    background-color: dodgerblue;
+    border: 2px antiquewhite solid;
+    color: antiquewhite;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 15px;
+    padding: 2px;
+}
+
+.animation {
+    width: 300px;
+    height: 300px;
+    margin-bottom:75px;
+}
+
+.rightDisplay {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cadre {
+    border: 2px dimgray solid;
+    -webkit-box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.79);
+    box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.79);
+}
+
+.barreProgressive{
+    position: relative;
+    width: 300px;
+    height: 20px;
+    background-color: dimgrey;
+    z-index: -1;
+}
+.stats-red {
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.stats-orange {
+    background-color: orangered;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.stats-yellow {
+    background-color: yellow;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.stats-light-green {
+    background-color: greenyellow;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.stats-green {
+    background-color: darkgreen;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.stats-teal {
+    background-color: teal;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+}
+.ability {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.description {
+    font-style: italic ;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-link {
+    background-color: dimgray;
+    text-decoration: none;
+    color: navajowhite;
+    margin-top: 25px;
+}
+
+.current {
+    background-color: #4e90d6;
+    text-decoration: none;
+    color: navajowhite;
+    margin-top: 25px;
+}
+
+.page-link:hover {
+    background-color: darkred;
+    color: navajowhite;
+}
