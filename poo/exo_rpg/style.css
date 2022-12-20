@@ -27,12 +27,6 @@ body {
     align-items: center;
 }
 
-.card-rpgEntity {
-    max-width: 33%;
-    max-height: 100%;
-    border: solid;
-}
-
 .table-entity {
     color: antiquewhite;
 }
@@ -56,6 +50,12 @@ body {
 .icon {
     max-width: 38px;
     max-height: 38px;
+}
+
+.card-rpgEntity {
+    max-width: 33%;
+    max-height: 100%;
+    border: solid;
 }
 
 .rpg-image {
